@@ -1,0 +1,229 @@
+create table admin
+(
+username varchar(100),
+pwd varchar(30),
+primary key(username,pwd)
+);
+
+
+
+create table franchise
+(
+fname varchar(30),
+fno int primary key,
+pwd varchar(30),
+owner varchar(50)
+);
+
+
+
+create table playerdetails
+(
+pno int primary key,
+pname varchar(100),
+age int,
+country varchar(30),
+category varchar(20)
+);
+
+create table auction
+(
+pno int,
+bidprice int,
+soldfor int,
+foreign key(pno) references playerdetails(pno) on delete cascade,
+foreign key(soldfor) references franchise(fno)
+);
+
+create table carrierstatistics
+(
+pno int,
+matches int,
+runsscored int,
+battingavg float,
+strikerate float,
+bestscore int,
+bowlingavg float,
+wicketstaken int,
+economy float,
+bestbowling varchar(10),
+foreign key(pno) references playerdetails(pno) on delete cascade
+);
+
+insert into admin values('shreyassharmabh@gmail.com','9449520841s');
+insert into admin values('sanjaykoushik@gmail.com','8762040037s');
+
+
+
+insert into franchise values('RCB','1','9448413675rc','vijay mallya');
+insert into franchise values('MI','2','9448413675mi','mukesh ambani');
+insert into franchise values('SRH','3','9448413675sr','kalanithi maran');
+insert into franchise values('DD','4','9448413675dd','gmr group');
+insert into franchise values('RPS','5','9448413675rp','sanjiv goenka');
+insert into franchise values('GL','6','9448413675gl','keshav bansal');
+insert into franchise values('KKR','7','9448413675kk','shah rukh khan');
+insert into franchise values('KXIP','8','9448413675kx','preity zita');
+
+
+
+
+insert into playerdetails values('18','virat kohli','29','india','batsman');
+insert into playerdetails values('17','ab de villiers','33','south africa','batsman');
+insert into playerdetails values('333','chirs gayle','38','west indies','all rounder');
+insert into playerdetails values('3','yuzvendra chahal','27','india','bowler');
+insert into playerdetails values('1','k l rahul','25','india','wicket keeper');
+
+insert into playerdetails values('31','david warner','30','austrlia','batsman');
+insert into playerdetails values('25','shikhar dhawan','31','india','batsman');
+insert into playerdetails values('34','chirs jordhan','28','england','bowler');
+insert into playerdetails values('15','bhuvneshwar kumar','27','india','bowler');
+insert into playerdetails values('12','yuvraj singh','35','india','all rounder');
+
+insert into playerdetails values('33','hardhik pandya','24','india','all rounder');
+insert into playerdetails values('45','rohith sharma','30','india','batsman');
+insert into playerdetails values('43','parthiv patel','31','india','batsman');
+insert into playerdetails values('63','jos buttler','27','england','wicket keeper');
+insert into playerdetails values('93','jasprith bumrah','23','india','bowler');
+
+insert into playerdetails values('41','shreyas iyer','22','india','batsman');
+insert into playerdetails values('777','rishabh pant','28','india','batsman');
+insert into playerdetails values('21','j p duminy','25','south africa','all rounder');
+insert into playerdetails values('11','mohammed shami','30','india','bowler');
+insert into playerdetails values('78','corey anderson','26','new zeland','all rounder');
+
+insert into playerdetails values('7','m s dhoni','35','india','wicket keeper');
+insert into playerdetails values('27','ajinkya rahane','28','India','batsman');
+insert into playerdetails values('55','ben stokes','25','england','all rounder');
+insert into playerdetails values('99','ravi ashwin','30','india','all rounder');
+insert into playerdetails values('2','ashok dinda','32','india','bowler');
+
+insert into playerdetails values('16','aaron finch','30','austrila','batsman');
+insert into playerdetails values('8','ravindra jadeja','28','india','all rounder');
+insert into playerdetails values('46','suresh raina','30','india','all rounder');
+insert into playerdetails values('42','brendon mccullum','35','new zeland','batsman');
+insert into playerdetails values('56','ifran oathan','32','india','bowler');
+
+insert into playerdetails values('23','gautham gambhir','35','india','batsman');
+insert into playerdetails values('50','chirs lynn','26','austrlia','batsman');
+insert into playerdetails values('74','sunil narine','28','west indies','all rounder');
+insert into playerdetails values('24','yusuf pathan','34','india','all rounder');
+insert into playerdetails values('9','manish pandey','23','india','batsman');
+
+insert into playerdetails values('32','glenn maxwell','28','austrlia','all rounder');
+insert into playerdetails values('10','david miller','27','south africa','batsman');
+insert into playerdetails values('26','eoin morgan','30','england','batsman');
+insert into playerdetails values('20','axar patel','23','india','all rounder');
+insert into playerdetails values('19','wriddiman saha','32','india','wicket keeper');
+
+
+
+insert into auction values('18','140000000','1');
+insert into auction values('17','100000000','1');
+insert into auction values('333','100000000','1');
+insert into auction values('3','10000000','1');
+insert into auction values('1','40000000','1');
+
+
+insert into auction values('31','90000000','3');
+insert into auction values('25','70000000','3');
+insert into auction values('34','5000000','3');
+insert into auction values('15','30000000','3');
+insert into auction values('12','40000000','3');
+
+
+insert into auction values('33','40000000','2');
+insert into auction values('45','60000000','2');
+insert into auction values('43','5000000','2');
+insert into auction values('63','5000000','2');
+insert into auction values('93','20000000','2');
+
+
+insert into auction values('41','5000000','4');
+insert into auction values('777','5000000','4');
+insert into auction values('21','20000000','4');
+insert into auction values('11','10000000','4');
+insert into auction values('78','20000000','4');
+
+
+insert into auction values('7','140000000','5');
+insert into auction values('27','70000000','5');
+insert into auction values('55','70000000','5');
+insert into auction values('99','50000000','5');
+insert into auction values('2','5000000','5');
+
+
+insert into auction values('16','20000000','6');
+insert into auction values('8','70000000','6');
+insert into auction values('46','70000000','6');
+insert into auction values('42','70000000','6');
+insert into auction values('56','10000000','6');
+
+insert into auction values('23','70000000','7');
+insert into auction values('50','10000000','7');
+insert into auction values('74','10000000','7');
+insert into auction values('24','10000000','7');
+insert into auction values('9','40000000','7');
+
+insert into auction values('32','14000000','8');
+insert into auction values('10','10000000','8');
+insert into auction values('26','10000000','8');
+insert into auction values('20','10000000','8');
+insert into auction values('19','40000000','8');
+
+
+
+
+
+insert into carrierstatistics values('18','149','4418','37.44','129.83','113','92.0','4','8.8','25-2');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('17','129','3473','38.16','148.17','133');
+insert into carrierstatistics values('333','101','3626','41.2','151.21','175','40.20','18','7.89','21-3');
+insert into carrierstatistics values('3','15','50','5.25','53.57','4','22.41','70','7.9','25-4');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('1','39','725','30.21','125.65','68');
+
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('25','126','3561','32.16','121.17','95');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('31','114','4014','40.55','142.14','126');
+insert into carrierstatistics values('34','10','3','1.2','60.0','3','22.25','12','9.21','11-4');
+insert into carrierstatistics values('15','90','158','8.32','100.64','22','21.07','111','7.08','19-5');
+insert into carrierstatistics values('12','120','2587','25.61','131.19','83','29.07','36','7.38','29-4');
+
+insert into carrierstatistics values('33','37','406','21.37','125.2','61','54.2','10','9.88','22-2');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('63','24','527','25.1','148.17','77');
+insert into carrierstatistics values('45','159','4207','32.61','130.9','109','29.33','15','7.59','6-4');
+insert into carrierstatistics values('93','47','120','12.5','96.15','16','30.48','46','8.1','7-3');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('43','119','2322','21.7','117.25','81');
+
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('41','32','807','27.83','128.17','96');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('777','24','564','25.55','151.14','97');
+insert into carrierstatistics values('21','77','1993','39.86','124.87','78','34.7','23','7.21','17-4');
+insert into carrierstatistics values('11','31','46','6.57','102.24','21','51.87','18','8.89','34-2');
+insert into carrierstatistics values('78','27','521','27.45','129.59','95','50.38','8','9.87','18-2');
+
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('7','159','3561','37.66','136.75','70');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('27','111','3057','35.99','120.59','103');
+insert into carrierstatistics values('55','12','316','31.2','142.99','103','26.25','12','7.21','18-3');
+insert into carrierstatistics values('99','111','231','10.5','96.5','29','24.97','100','6.55','34-4');
+insert into carrierstatistics values('2','78','26','2.6','54.17','7','30.04','69','8.2','18-4');
+
+insert into carrierstatistics values('16','65','1603','27.37','130.42','88','67.0','1','9.35','11-1');
+insert into carrierstatistics values('8','138','1732','24.06','122.92','48','30.88','82','7.81','16-5');
+insert into carrierstatistics values('46','157','1482','34.14','139.05','100','44.48','25','7.4','5-2');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('42','103','2753','28.07','131.89','158');
+insert into carrierstatistics values('56','56','565','32.6','120.17','65','34.04','80','7.52','17-2');
+
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('23','148','4133','31.55','124.27','93');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('50','12','384','38.4','158.04','93');
+insert into carrierstatistics values('74','82','271','13.55','147.57','54','6.33','95','6.33','6-4');
+insert into carrierstatistics values('24','105','1260','30.57','129.24','28','51.56','12','8.56','38-2');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('9','80','2454','32.52','105.25','105');
+
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('10','66','1536','35.52','141.45','101');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('19','80','1384','35.4','133.04','105');
+insert into carrierstatistics values('32','57','1228','25.06','164.57','95','46.33','11','8.83','15-2');
+insert into carrierstatistics values('20','50','1250','32.57','130.24','97','36.56','14','8.78','24-2');
+insert into carrierstatistics(pno,matches,runsscored,battingavg,strikerate,bestscore)values('26','50','1554','34.52','120.86','84');
+
+
+
+
+
+
